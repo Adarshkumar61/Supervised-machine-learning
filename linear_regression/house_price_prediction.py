@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+from sklearn import metrics
 
 #importing house price dataset:
 
@@ -39,8 +40,10 @@ model.fit(x_train, y_train)
 
 model_prediction  = model.predict(x_train)
 
-accuracy = accuracy_score(y_train, model_prediction)
-
+accuracy_r2_score = metrics.r2_score(model_prediction, y_train) #this will check our model accuracy score
+print(accuracy_r2_score)
+accuracy_mean_absolute_error  = metrics.mean_absolute_error(model_prediction, y_train)
+print(accuracy_mean_absolute_error)
 
 #now we will create a predictive system
 
