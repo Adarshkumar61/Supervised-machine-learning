@@ -2,11 +2,12 @@ import numpy as np
 import pandas as pd
 import re
 import string
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split 
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
+
 
 #importing dataset:
 true_news = pd.read_csv('truenews.csv')
@@ -16,6 +17,7 @@ true_news['label'] = 1
 fake_news['label'] = 0
 
 df_merge = pd.concat([true_news, fake_news], axis= 0)
+
 #it will merge 2 dataset into 1
 
 #now we will drop those feautures which are not required
