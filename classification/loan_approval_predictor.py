@@ -17,7 +17,7 @@ data  = pd.read_csv('csv_files/train_u6lujuX_CVtuZ9i (1) (1).csv')
 
 # now we will drop unrelevent feature from our dataset:
 
-data = data.drop('Loan_Id', axis=1)
+data = data.drop('Loan_ID', axis=1)
 
 #now we will check if there is any value is missing or not
 data.isnull().sum()
@@ -31,7 +31,7 @@ data.isnull().sum()
 data  = data.dropna()
 
 #now we will fill those missing values:
-data = data.fillna()
+data = data.fillna(' ')
 
 # now we will seperate the features and data
 
@@ -60,9 +60,10 @@ model = Pipeline(
 # Splitting data for training and test
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=2)
+model.fit(x_train, y_train)  # Fit the pipeline to the training data
 pred = model.predict(x_train)
 
-print(model.score(pred, x_train))
+print(model.score(x_train, y_train))  # Evaluate the model on the training data
 
 #now we will create a predictive system for users:
 
@@ -75,7 +76,7 @@ user_input = {
     'ApplicantIncome': float(input('enter your income of 1 month: ')),
     'CoapplicantIncome': float(input('enter your coapplicant salary of 1 month: ')),
     'LoanAmount': float(input('enter your loan amount you want(in dollars $): ')),
-    'Loan_Amount_Term': float('enter for how many moths you want (120: 1year, 240: 2 year, 360: 3 year(max))choose between: (120, 240, 360): '),
+    'Loan_Amount_Term': float(input('enter for how many moths you want (120: 1year, 240: 2 year, 360: 3 year(max))choose between: (120, 240, 360): ')),
     'Credit_History': float(input('enter your credit history (max: 1.0): ')),
     'Property_Area': input('enter your property area (rural/urban): '.title())
 }
