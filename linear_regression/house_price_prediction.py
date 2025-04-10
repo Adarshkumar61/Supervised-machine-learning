@@ -22,7 +22,7 @@ data = data.fillna(' ') #
 # our Target is :'median house price'
 #and we will seperate our 'feature and 'Target
 
-x = data.drop(['ocean proximity', 'median_house_value'], axis=1) #axis -1 bcz we are dropping column
+x = data.drop(['ocean proximity', 'median_house_value'], axis=1) #axis : 1 bcz we are dropping column
 y = data['medain_house_value']
 
 #now we will split data into 2 parts:
