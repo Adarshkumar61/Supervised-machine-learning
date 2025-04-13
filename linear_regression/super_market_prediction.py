@@ -46,3 +46,13 @@ converter = ColumnTransformer(
         ('num', 'passthrough', numerical_cols)
     ]
 )
+#now we will use our model:
+# we use a pipeline to join our model and converter 
+# this is much more efficient saves alot of effort 
+
+model = Pipeline(
+    steps=[
+        ('converter', converter),
+        ('linear', LinearRegression())
+    ]
+)
