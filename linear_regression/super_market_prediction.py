@@ -33,3 +33,16 @@ data.drop(['Item_Identifier', 'Outlet_Identifier'], axis=1, inplace= True)
 x = data.drop('Item_Outlet_Sales', axis=1)
 y = data['Item_Outlet_Sales']
         
+# now we will Seperate our categorical features and numerical features:
+
+categorical_col = x.select_dtypes(include='object').columns
+numerical_cols =  x.select_dtypes(exclude='object').columns
+
+#now we convert those alphabetical value into numerical value using column transformer and one hot encoder:
+
+converter = ColumnTransformer(
+    transformers= [
+        ('cat', OneHotEncoder(handle_unknown='ignore'), categorical_col),
+        ('num', 'passthrough', numerical_cols)
+    ]
+)
