@@ -56,3 +56,19 @@ model = Pipeline(
         ('linear', LinearRegression())
     ]
 )
+
+#now we send our data into Training and testing sets|;
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=2)
+
+#now we will fit our data ;
+model.fit(x_train, y_train)
+
+#predict from model:
+
+prediction_x_train = model.predict(x_train)
+
+#now we will check accuracy of our model:
+
+accuracy = metrics.r2_score(x_train, prediction_x_train)
+
