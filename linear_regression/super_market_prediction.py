@@ -10,3 +10,4 @@ from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import LinearRegression
 
 #loading the dataset:
+data = pd.read_csv('csv_files/Train (1).csv')
