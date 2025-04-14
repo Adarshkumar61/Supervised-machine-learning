@@ -78,6 +78,9 @@ accuracy = metrics.r2_score(x_train, prediction_x_train)
 user_input = {
     'Item_Weight': float(input('Enter the Weight of item: ')),
     'Item_Fat_Content': input('Enter the fat content: '),
+    'Item_Visibility': float(input('Enter the visiblity: ')),
+    'Item_Type': input('Enter the Item Type: '),
+    
     
 }
 converted_into_data_frame = pd.DataFrame(user_input)
