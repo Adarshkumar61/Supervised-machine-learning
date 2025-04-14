@@ -57,7 +57,7 @@ model = Pipeline(
     ]
 )
 
-#now we send our data into Training and testing sets|;
+#now we send our data into Training and testing sets:
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=2)
 
@@ -89,4 +89,4 @@ user_input = {
 }
 converted_into_data_frame = pd.DataFrame(user_input)
 user_input_prediction = model.predict(converted_into_data_frame)
-print(user_input_prediction) #this will tell our result .
+print(user_input_prediction) #this will tell our result 
