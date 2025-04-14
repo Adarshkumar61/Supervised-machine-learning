@@ -80,6 +80,7 @@ user_input = {
     'Item_Fat_Content': input('Enter the fat content: '),
     'Item_Visibility': float(input('Enter the visiblity: ')),
     'Item_Type': input('Enter the Item Type: '),
+    'Item_MRP': float(input('Enter the price of item: ')),
     
     
 }
