@@ -11,7 +11,7 @@ from sklearn.linear_model import LinearRegression
 
 #loading the dataset:
 data = pd.read_csv('csv_files/Train (1).csv')
-#Features are : Item_Identifier	Item_Weight	Item_Fat_Content	Item_Visibility	Item_Type	Item_MRP	Outlet_Identifier	Outlet_Establishment_Year	Outlet_Size	Outlet_Location_Type	Outlet_Type	
+#Features are : Item_Identifier,	Item_Weight,	Item_Fat_Content,	Item_Visibility,	Item_Type,	Item_MRP,	Outlet_Identifier,	Outlet_Establishment_Year,	Outlet_Size,	Outlet_Location_Type,	Outlet_Type
 
 # Target is : Item_Outlet_Sales
 
@@ -76,7 +76,7 @@ accuracy = metrics.r2_score(x_train, prediction_x_train)
 # now we will create a predictive system:
 
 user_input = {
-    #here we will put our data.
+    ''
 }
 converted_into_data_frame = pd.DataFrame(user_input)
 user_input_prediction = model.predict(converted_into_data_frame)
