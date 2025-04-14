@@ -81,7 +81,10 @@ user_input = {
     'Item_Visibility': float(input('Enter the visiblity: ')),
     'Item_Type': input('Enter the Item Type: '),
     'Item_MRP': float(input('Enter the price of item: ')),
-    
+    'Outlet_Establishment_Year': float(input('Enter the year of establishment: ')),
+    'Outlet_Size': input('Enter the size of outlet(low/medium/high): '),
+    'Outlet_Location_Type': input('Enter the location of outlet(tier(1/2/3)): '),
+    'Outlet_Type': input('Enter the type of outlet(supermarket type:1/2, grocery store): ')
     
 }
 converted_into_data_frame = pd.DataFrame(user_input)
