@@ -14,7 +14,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size= 0.2, strati
 
 linear_model = LogisticRegression() #our model
 
-linear_model.fit(x_train, y_train)
+linear_model.fit(x_train, y_train) #training the data
 
 predict = linear_model.predict(x_train)
 accurcy_of_x_train = accuracy_score(x_train, predict)
