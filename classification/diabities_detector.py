@@ -21,7 +21,7 @@ accurcy_of_x_train = accuracy_score(x_train, predict)
 
 #creating a input parameter:
 
-user_input = ()
+user_input = ([]) #values
 in_numpy = np.asarray(user_input)
 
 reshaped_model = in_numpy.reshape(1, -1)
