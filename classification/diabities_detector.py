@@ -12,7 +12,7 @@ y = data['outcome']
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size= 0.2, stratify= y, random_state=2)
 
-linear_model = LogisticRegression()
+linear_model = LogisticRegression() #our model
 
 linear_model.fit(x_train, y_train)
 
