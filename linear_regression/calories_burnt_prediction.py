@@ -46,12 +46,13 @@ prediction_on_x_train = model.predict(x_train)
 prediction_on_x_test = model.predict(x_test)
 
 #accuracy of model:
-
+# using r2 score:
 scorer2_x_train = r2_score(y_train, prediction_on_x_train)
 
 scorer2_x_test = r2_score(y_test, prediction_on_x_test)
 
-score1_mea = mean_absolute_error(y_train, prediction_on_x_train)
+# using mean_absolute_error:
+score1_mea = mean_absolute_error(y_train, prediction_on_x_train) 
 score2_mea = mean_absolute_error(y_test, prediction_on_x_test)
 
 
