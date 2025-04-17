@@ -35,7 +35,7 @@ accuracy_of_x_train = accuracy_score(y_train, predict)
 accuracy_of_x_test = accuracy_score(y_test, predict_x_test)
 
 
-#creating a input parameter:
+#creating a input parameter: 
 
 user_input = ([]) #values
 in_numpy = np.asarray(user_input)
