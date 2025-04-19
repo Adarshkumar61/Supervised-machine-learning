@@ -45,7 +45,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_
 model = LogisticRegression()
 
 #now we will use gridsearchcv:
-param_grid = {'penalty': ['11', '12','elasticnet'], 'C': {1,2,10,20,30,40,50,60,70}}
+param_grid = {'penalty': ['11', '12','elasticnet'], 'C': {1,2,10,20,30,40,50,60,70}, 'max_iter': [100, 200, 300]}
 cv = GridSearchCV(model, param_grid=param_grid, scoring='accuracy', cv=5)
 
 #now we will fit our dataset:
