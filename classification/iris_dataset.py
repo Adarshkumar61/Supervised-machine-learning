@@ -20,7 +20,7 @@ df.head()
 
 #so there are 
 # features: 4
-# target: 3('setosa', 'versicolor', 'virginica')
+# target: 1 options :3 - ('setosa', 'versicolor', 'virginica')
 
 # now we will check if there is any missing value is present or not:
 df.isnull().sum()
