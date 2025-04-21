@@ -77,7 +77,7 @@ user_input = ()
 converted = vectorizer.transform([user_input])
 prediction = model.predict(converted)
 print(prediction)
-if prediction[0] == 1:
+if prediction[0] == 1: 
   print('Real Message')
 else:
   print('Spam Message')
