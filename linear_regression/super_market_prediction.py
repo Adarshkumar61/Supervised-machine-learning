@@ -76,7 +76,7 @@ accuracy = metrics.r2_score(x_train, prediction_x_train)
 # now we will create a predictive system:
 
 user_input = {
-    'Item_Weight': float(input('Enter the Weight of item: ')),
+    'Item_Weight': float(input('Enter the Weight of item: ')), 
     'Item_Fat_Content': input('Enter the fat content: '),
     'Item_Visibility': float(input('Enter the visiblity: ')),
     'Item_Type': input('Enter the Item Type: '),
