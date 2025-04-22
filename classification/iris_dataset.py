@@ -8,7 +8,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report
 
 # loading the iris dataset:
-df = sns.load_dataset('iris')
+df = sns.load_dataset('iris') 
 df.head()
 #result will be:
 # sepal_length	sepal_width	 petal_length	petal_width	   species
