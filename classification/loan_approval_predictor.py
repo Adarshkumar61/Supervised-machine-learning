@@ -63,7 +63,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_
 model.fit(x_train, y_train)  # Fit the pipeline to the training data
 pred = model.predict(x_train)
 
-print(model.score(x_train, y_train))  # Evaluate the model on the training data
+print(model.score(pred, y_train))  # Evaluate the model on the training data
 
 #now we will create a predictive system for users:
 
