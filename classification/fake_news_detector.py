@@ -69,7 +69,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, stratify= y, test_size
 
 converter = TfidfVectorizer()
 x_train = converter.fit_transform(x_train)
-x_test = converter.fit_transform(x_test)
+x_test = converter.transform(x_test)
 
 #now we call a model for classification problem
 #here we are calling LogisticRegression
