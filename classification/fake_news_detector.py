@@ -81,7 +81,7 @@ prediction_x_test = model.predict(x_test)
 
 #we will check the score of our model
 
-model.score(x_test, y_test)
+
 
 print(classification_report(y_test, prediction_x_test)) #it willl give classification report of our model
 
