@@ -63,4 +63,4 @@ acc_on_x_test = accuracy_score(y_train, pred_on_x_train)
 # using classification_report:
 
 acc_on_x_test_class = classification_report(y_test, pred_on_x_test)
-acc_on_x_train_class = classification_report(y_train, pred_on_x_train)
+acc_on_x_train_class = classification_report(y_train, pred_on_x_train) 
