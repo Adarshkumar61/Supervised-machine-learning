@@ -64,6 +64,8 @@ model.fit(x_train, y_train)  # Fit the pipeline to the training data
 pred = model.predict(x_train)
 print(model.score(pred, y_train))  # Evaluate the model on the training data
 
+pred_on_x_test = model.predict(x_test)
+acc_on_x_test = accuracy_score(y_test, pred_on_x_test)
 #now we will create a predictive system for users:
 
 user_input = {
