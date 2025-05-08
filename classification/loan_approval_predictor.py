@@ -61,8 +61,8 @@ model = Pipeline(
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=2)
 model.fit(x_train, y_train)  # Fit the pipeline to the training data
-pred = model.predict(x_train)
-print(model.score(pred, y_train))  # Evaluate the model on the training data
+pred_on_x_train = model.predict(x_train)
+acc_on_x_train = accuracy_score(pred_on_x_train, y_train) # Evaluate the model on the training data
 
 pred_on_x_test = model.predict(x_test)
 acc_on_x_test = accuracy_score(y_test, pred_on_x_test)
