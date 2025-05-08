@@ -78,11 +78,11 @@ model = LogisticRegression()
 model = model.fit(x_train, y_train)
 
 prediction_x_test = model.predict(x_test)
-
+prediction_x_train = model.predict(x_train)
 #we will check the score of our model
 
 
-
+print(classification_report(y_train, prediction_x_train))
 print(classification_report(y_test, prediction_x_test)) #it willl give classification report of our model
 
 # now lets create a prdictive system
