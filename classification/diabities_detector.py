@@ -30,7 +30,7 @@ predict = linear_model.predict(x_train)
 predict_x_test = linear_model.predict(x_test) #now we will check the accuracy of our model:
 
 # on x_train:
-accuracy_of_x_train = accuracy_score(y_train, predict)
+accuracy_of_x_train = accuracy_score(y_train, predict)  
 
 # on x_test:
 accuracy_of_x_test = accuracy_score(y_test, predict_x_test)
