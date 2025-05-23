@@ -56,9 +56,9 @@ def simplify(text):
 
 df['text'] = df['text'].apply(simplify)
 
-#now we will decleare our features and target
+#now we will Seperate our features and target
 
-x = df['text']
+x = df['text'] 
 y = df['label']
 
 # now we will send these for training data:
