@@ -58,8 +58,8 @@ df['text'] = df['text'].apply(simplify)
 
 #now we will Seperate our features and target
 
-x = df['text'] 
-y = df['label']
+x = df['text'] #feature
+y = df['label'] #target
 
 # now we will send these for training data:
 x_train, x_test, y_train, y_test = train_test_split(x, y, stratify= y, test_size= 0.25, random_state=2)

@@ -35,8 +35,8 @@ df[df['species'] != 'setosa']
 # this will drop setosa value from all dataset
 
 #now we will seperate feature and target:
-x = df.iloc[:,:-1]
-y = df[:,-1]
+x = df.iloc[:,:-1] #feature
+y = df[:,-1] # target
 
 #now we will send our data into training and testing set:
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=2)
