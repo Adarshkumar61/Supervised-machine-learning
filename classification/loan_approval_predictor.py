@@ -32,12 +32,13 @@ data  = data.dropna()
 
 #now we will fill those missing values:
 data = data.fillna(' ')
+# there is no missing value so we will move to next step
 
 # now we will seperate the features and data
 
-x = data.drop('Loan_Status', axis=1)
-y = data['Loan_Status']
-
+x = data.drop('Loan_Status', axis=1) #feature
+y = data['Loan_Status'] #target
+ 
 #now we will seperate featues and  with their dtype
 
 categorical_value = x.select_dtypes(include='object').columns.tolist()
