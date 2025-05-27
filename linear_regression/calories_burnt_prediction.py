@@ -14,7 +14,7 @@ exercise = pd.read_csv('csv_files/exercise.csv')
 calories = pd.read_csv('csv_files/calories.csv')
 
 # combine both dataset:
-combine = pd.concat([exercise, calories['Calories']], axis=1)
+combine = pd.concat([exercise, calories['Calories']], axis=1) 
 #concating along the columns
 
 combine.isnull().sum()
