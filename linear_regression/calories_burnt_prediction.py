@@ -40,7 +40,7 @@ scaler.transform(x_test)
 #we are using model:
 
 model = GradientBoostingRegressor()
-model.fit(x_train, y_train)
+model.fit(x_train, y_train) 
 
 
 prediction_on_x_train = model.predict(x_train)
