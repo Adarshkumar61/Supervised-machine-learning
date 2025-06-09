@@ -22,7 +22,7 @@ combine.isnull().sum()
 
 combine.drop('User_ID', axis=1, inplace= True)
 
-combine.replace({'Gender': {'male': 1, 'female': 0}}) 
+combine.replace({'Gender': {'male': 1, 'female': 0}}, inplace= True) 
 
 #so we are seperating feature and our target:
 
