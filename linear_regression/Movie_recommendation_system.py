@@ -26,7 +26,7 @@ combined = data['genres']+ ' ' + data['keywords']+ ' ' + data['tagline']+ ' '+ d
 
 vectorizer = TfidfVectorizer()
 
-feature = vectorizer.fit_transform(combined)
+feature = vectorizer.fit_transform(combined) 
 
 #now we will check the symmetric score using:
 # cosine_similarity:
