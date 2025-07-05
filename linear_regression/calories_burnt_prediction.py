@@ -47,6 +47,7 @@ prediction_on_x_train = model.predict(x_train)
 prediction_on_x_test = model.predict(x_test)
 
 #accuracy of model:
+
 # using r2 score:
 scorer2_x_train = r2_score(y_train, prediction_on_x_train) #accuracy of x train
 
@@ -61,4 +62,4 @@ user_input = ([0, 38, 160.0, 81.0, 29.0,105.0, 41.8])
 user_input_numpy = np.asarray(user_input)
 reshaped = np.reshape(user_input_numpy)
 prediction = model.predict(reshaped)
-print(prediction)
+print(prediction) #it tells how many calories burnt based on some info.
