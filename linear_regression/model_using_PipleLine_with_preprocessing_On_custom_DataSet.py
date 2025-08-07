@@ -16,3 +16,54 @@ data = {
     'City': ['Delhi', 'Mumbai', 'Delhi', 'Bangalore', 'Chennai', np.nan, 'Delhi', 'Mumbai', 'Delhi', np.nan, 'Mumbai', 'Banglore', 'Mumbai', 'Chennai', 'Delhi'],
     'Spending_Score': [60, 70, 65, 90, 85, 55, 60, np.nan, 76, 80, 43, 60, 80, 65, np.nan]
 }
+
+#converting these dataset into dataframe:
+df = pd.DataFrame(data)
+
+#our target is 'Spending Score' so we will gonna remove the null values:
+df = df.dropna(subset=['Spending_Score'])
+
+# now we will gonna split the feature and target:
+
+x = df.dropna('Spending_Score', axis= 1)
+y = df['Spending_Score']
+
+# now we will send it to train and test split:
+x_train, y_train, x_test, y_test = train_test_split(x, y, test_size= 0.2, random_state= 42)
+
+#now we will categorize the data :
+num_values = ['Age', 'Income']
+str_values = ['Gender', 'City']
+
+
+num_transformer = Pipeline(
+    steps=[
+      ('imp', SimpleImputer(strategy= 'mean')),
+      ('scaler', StandardScaler())
+    ])
+
+str_transformer = Pipeline(
+    steps=[
+        ('imp', SimpleImputer(strategy='most_frequent')),
+        ('onehot', OneHotEncoder(handle_unknown= 'ignore'))
+    ]
+)
+
+preprocesser = ColumnTransformer(
+    ('num', num_transformer, num_values),
+    ('str', str_transformer, str_values)
+)
+
+model = Pipeline(
+    ('preprocessor', preprocesser),
+    ('model', LinearRegression())
+)
+
+model.fit(x_train, y_train)
+
+
+pr_on_training_data = model.predic(x_train)
+pr_on_test_data = model.predict(x_test)
+
+
+#checking accuracy of our model
