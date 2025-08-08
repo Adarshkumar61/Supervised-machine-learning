@@ -70,4 +70,5 @@ pr_on_test_data = model.predict(x_test)
 acc_on_training_data = r2_score(pr_on_training_data, y_train)
 print(acc_on_training_data)
 
-
+m_a_e = mean_absolute_error(acc_on_training_data, y_train)
+print(m_a_e)
