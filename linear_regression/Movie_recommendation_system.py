@@ -5,53 +5,53 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # #loading the data set:
-# data = pd.read_csv('movies.csv')
+data = pd.read_csv('movies.csv')
 
-# data.shape
-# # (4803, 24)
-# # so we will take only relevent column which is required:
+data.shape
+# (4803, 24)
+# so we will take only relevent column which is required:
 
-# categorical =  ['genres', 'keywords', 'tagline', 'cast', 'director']
+categorical =  ['genres', 'keywords', 'tagline', 'cast', 'director']
 
-# # we will fill missing values with null string:
-# for feature in categorical:
-#     data[feature] = data[feature].fillna('')
+# we will fill missing values with null string:
+for feature in categorical:
+    data[feature] = data[feature].fillna('')
     
-#     #now there are no missing values
+    #now there are no missing values
 
-# #now we will combine our data
-# combined = data['genres']+ ' ' + data['keywords']+ ' ' + data['tagline']+ ' '+ data['cost']+ ' ' + data['director']
+#now we will combine our data
+combined = data['genres']+ ' ' + data['keywords']+ ' ' + data['tagline']+ ' '+ data['cost']+ ' ' + data['director']
 
-# #now we will vectorize those data using tfidfvectorizer:
+#now we will vectorize those data using tfidfvectorizer:
 
-# vectorizer = TfidfVectorizer()
+vectorizer = TfidfVectorizer()
 
-# feature = vectorizer.fit_transform(combined) 
+feature = vectorizer.fit_transform(combined) 
 
-# #now we will check the symmetric score using:
-# # cosine_similarity:
+#now we will check the symmetric score using:
+# cosine_similarity:
  
-# similar = cosine_similarity(feature)
+similar = cosine_similarity(feature)
 
-# #now we will create a predictive system:
+#now we will create a predictive system:
 
-# user_input = input('Enter the moive name: ')
-# #finding the title:
-# title = difflib.get_close_matches(user_input, data['title'])
+user_input = input('Enter the moive name: ')
+#finding the title:
+title = difflib.get_close_matches(user_input, data['title'])
 
-# cloesest_value = title[0]
+cloesest_value = title[0]
 
-# #getting the index:
-# index = data[data.title == cloesest_value]['index'].values[0]
+#getting the index:
+index = data[data.title == cloesest_value]['index'].values[0]
 
-# #getting the similarity
-# similarity = list(enumerate(similar[index]))
+#getting the similarity
+similarity = list(enumerate(similar[index]))
 
-# soritng =  sorted(similarity, key= lambda x:x[1], reverse= True)
+soritng =  sorted(similarity, key= lambda x:x[1], reverse= True)
 
-# for i in range(0,11):
-#     index = soritng[i][0]
-#     title =data[data.index == index]['title'].values[0]
-#     print('suggestions are:')
-#     print(i +1, title)
+for i in range(0,11):
+    index = soritng[i][0]
+    title =data[data.index == index]['title'].values[0]
+    print('suggestions are:')
+    print(i +1, title)
     

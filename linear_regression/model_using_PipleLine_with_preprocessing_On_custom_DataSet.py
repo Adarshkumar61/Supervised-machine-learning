@@ -7,7 +7,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
-
+from sklearn.metrics import r2_score, mean_absolute_error
 
 data = {
     'Age': [25, 30, np.nan, 45, 35, 29, np.nan, 40, 45, 56, 32, 76, np.nan, 21, 45],
@@ -66,4 +66,7 @@ pr_on_training_data = model.predic(x_train)
 pr_on_test_data = model.predict(x_test)
 
 
-#checking accuracy of our model
+#checking accuracy of our model:
+acc_on_training_data = r2_score(pr_on_training_data, y_train)
+print(acc_on_training_data)
+
