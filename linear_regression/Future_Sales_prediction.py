@@ -23,3 +23,15 @@ data.isnull().sum()
 x = data.drop('Sales', axis= 1) # features
 y = data['Sales'] # target
 
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size= 0.2, random_state= 42)
+
+model = LinearRegression()
+model.fit(x_train, y_train)
+
+print(model.score(x_test, y_test))
+# 0.9071151426127192
+
+y_pred = model.predict(x_test)
+print("Mean Absolute Error:", mean_absolute_error(y_test, y_pred))
+# Mean Absolute Error: 1.213745773614481
+
