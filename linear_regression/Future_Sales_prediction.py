@@ -35,3 +35,9 @@ y_pred = model.predict(x_test)
 print("Mean Absolute Error:", mean_absolute_error(y_test, y_pred))
 # Mean Absolute Error: 1.213745773614481
 
+#prediciton:
+# feature = [tv, radio, newspaper]
+new_data = np.array([[150.0, 30.0, 40.0]]) # features = [TV, Radio, Newspaper]
+prediction = model.predict(new_data)
+print("Predicted Sales:", prediction)
+# Predicted Sales: [16.92272003]
