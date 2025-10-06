@@ -86,7 +86,7 @@ close_match = title[0]
 index = data[data.title == close_match]['index'].values[0]
 
 similarity_score = (list(enumerate(similarity[index])))
-
+# top_indices = [i[0] for i in sorted(similarity_score, key=lambda x: x[1], reverse=True)[:11]]
 sorting = sorted(similarity_score,key= lambda x:x[1], reverse= True)
 
 for i in range(11):
