@@ -23,14 +23,15 @@ for feature in categorical:
 combined = data['genres']+ ' ' + data['keywords']+ ' ' + data['tagline']+ ' '+ data['cost']+ ' ' + data['director']
 
 #now we will vectorize those data using tfidfvectorizer:
-
+# tf means term frequency, idf means inverse document frequency
+# tf-idf is a numerical statistic that is intended to reflect how important a word is to
 vectorizer = TfidfVectorizer()
-
+# .fit_transform will learn the vocabulary and idf from training set, and return term-document matrix.
 feature = vectorizer.fit_transform(combined) 
 
 #now we will check the symmetric score using:
 # cosine_similarity:
- 
+#cosine similarity is a metric used to measure how similar the documents are irrespective of their size.
 similar = cosine_similarity(feature)
 
 #now we will create a predictive system:
